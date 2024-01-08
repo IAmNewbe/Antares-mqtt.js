@@ -3,24 +3,20 @@ require('dotenv').config();
 
 // Replace these with your MQTT broker details
 const brokerUrl = 'mqtt://mqtt.antares.id:1883';
-const access_key = "34299c356a08ad67:7f974df277665f63";
+const access_key = '34299c356a08ad67:7f974df277665f63';
 
 // Create an MQTT client instance
 const client = mqtt.connect(brokerUrl);
+const topic = `/oneM2M/resp/antares-cse/${access_key}/json`;
 
 // Handle connection events
 client.on('connect', () => {
   console.log('Connected to MQTT broker');
 
   // Subscribe to a topic
-  const topic = `/oneM2M/resp/antares-cse/${access_key}/json`;
   client.subscribe(topic, (err) => {
     if (!err) {
       console.log(`Subscribed to ${topic}`);
-      
-      client.on('message', (topic, message) => {
-        console.log(`Received message on topic ${topic}: ${message.toString()}`);
-      });
     } else {
       console.error(`Error subscribing to ${topic}: ${err}`);
     }

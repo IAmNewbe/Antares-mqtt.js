@@ -4,7 +4,7 @@ const mqtt = require('mqtt');
 const brokerUrl = 'mqtt://mqtt.antares.id:1883';
 
 //Your API Key of your Application in Antares
-const access_key = process.env.ACCESS_KEY;
+const access_key = '34299c356a08ad67:7f974df277665f63';
 
 //Application and Device Name in Antares 
 const Application = 'Lynx';
