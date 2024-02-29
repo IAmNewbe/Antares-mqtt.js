@@ -2,12 +2,14 @@ const mqtt = require('mqtt');
 require('dotenv').config();
 
 // Replace these with your MQTT broker details
-const brokerUrl = 'mqtt://mqtt.antares.id:1883';
-const access_key = '34299c356a08ad67:7f974df277665f63';
+// const brokerUrl = 'mqtt://mqtt.antares.id:1883';
+const brokerUrl = "mqtt://mqtt-cleen.plnnusantarapower.co.id";
+// const access_key = '34299c356a08ad67:7f974df277665f63';
 
 // Create an MQTT client instance
 const client = mqtt.connect(brokerUrl);
-const topic = `/oneM2M/resp/antares-cse/${access_key}/json`;
+// const topic = `/oneM2M/resp/antares-cse/${access_key}/json`;
+const topic = "UPMKR/testnodemcu";
 
 // Handle connection events
 client.on('connect', () => {
